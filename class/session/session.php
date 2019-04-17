@@ -2,6 +2,11 @@
     class Session {
         private $attributs = [];
 
+        public function __construct()
+        {
+            session_start();
+        }
+
         // Ici on peux appeller $key -> $Attribut et $value -> $valeureCorrespondante
         public function add($key, $valeur){
         }
