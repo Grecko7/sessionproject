@@ -1,37 +1,38 @@
 <?php
-    class session {
-        public $attribute = [];
+    class Session {
+        private $attributs = [];
 
-        public function __construct()
-        {
-        }
         // Ici on peux appeller $key -> $Attribut et $value -> $valeureCorrespondante
-        public function __set($key, $value)
-        {
-            $this->attribute[$key]=$value;
+        public function add($key, $valeur){
         }
 
-        public function __get($key)
-        {
-            return $this->attribute[$key];
+        public function update($key, $valeur){
         }
 
-        public function addSession($key, $value)
-        {
-            $this->attribute[$key] = $value;
+        public function exist($key){
         }
 
-        public function updateSession($key, $value)
-        {
-             $this->attribute[$key] = $value;
+        public function remove($key){
         }
 
-        public function getAttribute()
+        public function __set($name, $value)
         {
-            return $this->attribute;
+            $this->attributs[$name] = $value;
         }
 
+        public function __get($name)
+        {
+            return $this->attributs[$name];
+        }
 
+        public function __isset($name)
+        {
+            return isset($this->attributs[$name]);
+        }
 
+        public function __unset($name)
+        {
+            unset($this->attributs[$name]);
+        }
     }
 ?>
